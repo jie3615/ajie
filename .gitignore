@@ -12,3 +12,5 @@ target
 node_modules
 test/derby.log
 derby.log
+
+ajie-shardingjdbc/.mvn/wrapper/
