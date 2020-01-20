@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author: wyj
@@ -40,6 +42,14 @@ public class UserController {
         b.setModifiedOn(Timestamp.valueOf(simpleDate.format(nowdate)));
         happyBeanDetailDao.insertBean(b);
         return b;
+    }
 
+    @GetMapping("/listBean")
+    public List<HappyBeanDetail> listBean(){
+        List<Long> ids = new ArrayList<>();
+        ids.add(423877782657826817L);
+        ids.add(423878156303204352L);
+        List<HappyBeanDetail> list = happyBeanDetailDao.listHappyBeanByIds(ids);
+        return list;
     }
 }

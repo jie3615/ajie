@@ -6,7 +6,6 @@
 		keyProperty="id">
 		
 		INSERT INTO happybean_detail (
-		  
 		  happybeanId,
 		  operationType,
 		  operationName,
@@ -19,7 +18,6 @@
 		  createdOn,
 		  modifiedBy,
 		  modifiedOn
-
 		) VALUES (
 			#{happybeanId},
 			#{operationType},
@@ -35,5 +33,15 @@
 			#{modifiedOn}
 		)
 	</insert>
+
+	<select id="listHappyBeanByIds" parameterType="java.util.List" resultType="com.ajie.shardingjdbc.bean.HappyBeanDetail">
+
+		SELECT * FROM `happybean_detail` WHERE id IN
+
+		<foreach collection="ids" item="id" separator="," open="(" close=")">
+			(#{id})
+		</foreach>
+
+	</select>
 
 </mapper>   

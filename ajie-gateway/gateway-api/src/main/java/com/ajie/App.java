@@ -1,5 +1,7 @@
 package com.ajie;
 
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 /**
  * Hello world!
  *
