@@ -16,7 +16,7 @@ public class WxPayController {
         return "index";
     }
 
-    @RequestMapping("/pay")
+    @RequestMapping("/wxpay")
     public String pay() {
         return "payment";
     }
